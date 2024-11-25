@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+body{
+    font-family: "Cairo", serif;
+    background-color: var(--mainColor);
+    color: var(--secondColor);
+}
+:root{
+    --mainColor:#0d1117;
+    --secondColor:#e7e7e7;
+    --cardColor:rgba(255, 255, 255, 0.11);
+    --lineColor:#e7e7e723;
+    --overLayerColor:rgba(0, 0, 0, 0, 0.481);
+}
+.app{
+    padding: 20px;
+}
+.app .header h1{
+    text-align: center;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,280px) ;
+    gap: 10px;
+    margin: 16px;
+}
+.add{
+    background-color: var(--cardColor);
+    padding: 10px 20px;
+    border-radius: 7px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.card-style{
+    background-color: var(--cardColor);
+    padding: 10px 20px;
+    border-radius: 7px;
+}
+.plus{
+    background-color: black;
+    clip-path: circle();
+    cursor: pointer;  
+}
+.plus i{
+    font-size: 40px;
+    text-align: center;
+    display: grid;
+}
+.card-content{
+    font-size: 18px;
+    font-weight: 500;
+}
+.card-content p{
+    color: rgb(165, 158, 158);
+}
+.card-details{
+    color: rgb(165, 158, 158);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--lineColor);
+    padding: 2px 0px;
+    margin: 10px 0px;
+}
+.card-details span{
+    font-size: 12px;
+}
+.poo{
+    font-size: 20px;
+    cursor: pointer;
+}
+.menu-app{
+    position: relative;
+}
+.menu-app:hover .menu{
+    transform: scale(1);
+    transition: all 200ms linear;
+}
+.menu-app .menu{
+    position: absolute;
+    width: 100px;
+    padding: 10px 0px;
+    left: auto;
+    top: auto;
+    border-radius: 8px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 18px;
+    justify-content: space-around;
+    cursor: pointer;
+    z-index: 6;
+    transform: scale(0);
+}
+.menu-app .menu li{
+    transition:all 200ms linear;
+
+}
+.menu-app .menu li:hover{
+    background-color: var(--lineColor);
+   
+}
+.edit,.trash{
+    padding: 7px 0px;
+}
+.popup-app{
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background-color: var(--overLayerColor);
+    z-index: 9999;
+    display: none;
+}
+
+.popup-app.open{
+    display: grid;
+}
+.popup{
+    background-color: rgb(32, 32,32);
+    width: 340px;
+    /* text-align: center; */
+    padding: 10px 20px;
+    border-radius: 7px;
+}
+.header-popup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-popup i{
+    font-size: 30px;
+    cursor: pointer;
+}
+.popup-app .popup form{
+    margin: 15px 0;
+
+}
+.popup-app .popup form > div{
+    margin: 15px 0;
+
+}
+.popup-app .popup form > div :where(input , textarea){
+    display: block;
+    width: 100%;
+    padding: 7px;
+    background-color: inherit;
+    border: 1px solid #eeeeee86;
+    border-radius: 7px;
+    outline-width: 0;
+    color: white;
+}
+.popup-app .popup form > div textarea{
+    resize: none;
+    height: 120px;
+}
+
+.popup-app .popup form > button{    
+    width: 100%;
+    padding: 10px 0;
+    color: var(--secondColor);
+    background-color: var(--cardColor);
+    cursor: pointer;
+    border-radius: 7px;
+    font-size: 1rem;
+    border-width: 0;
+}
+.popup-app .popup form > button:hover{
+    background-color: rgba(255, 255, 255, 0.268);
+}
+.hp{
+    position: fixed;
+    bottom: 0;
+    
+}
